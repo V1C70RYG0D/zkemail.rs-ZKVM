@@ -1,0 +1,5 @@
+[workspace]
+
+[[guest]]
+name = "email_verification"
+path = "../guest"

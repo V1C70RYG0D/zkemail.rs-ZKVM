@@ -1,0 +1,18 @@
+[workspace]
+
+[package]
+name = "risc0-host"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+risc0-zkvm = { version = "1.0", features = ["prove"] }
+serde = { version = "1.0", features = ["derive"] }
+borsh = { version = "1.0", features = ["derive"] }
+zkemail-core = { path = "../../../core", features = ["risc0"] }
+tokio = { version = "1.0", features = ["full"] }
+methods = { path = "methods" }
+
+[[bin]]
+name = "host_runner"
+path = "src/bin/host_runner.rs"

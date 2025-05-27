@@ -1,0 +1,44 @@
+[package]
+name = "zkemail-profiling"
+version = "0.1.0"
+edition = "2021"
+description = "ZKVM-specific profiling tools for the zkemail crate"
+
+[features]
+default = []
+sp1 = ["zkemail-core/sp1", "sp1-sdk"]
+risc0 = ["zkemail-core/risc0", "risc0-zkvm"]
+
+[dependencies]
+zkemail-core = { path = "../core" }
+zkemail-helpers = { path = "../helpers" }
+criterion = { workspace = true }
+dhat = { workspace = true }
+mailparse = { workspace = true }
+regex-automata = { workspace = true }
+slog = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+
+# ZKVM framework dependencies
+risc0-zkvm = { workspace = true, optional = true }
+sp1-sdk = { workspace = true, optional = true }
+borsh = { workspace = true }
+
+[lib]
+name = "zkemail_profiling"
+path = "src/lib.rs"
+
+# ZKVM integration examples
+[[bench]]
+name = "zkvm_benchmarks"
+harness = false
+
+[[bin]]
+name = "comprehensive_zkvm_benchmarks"
+path = "src/bin/comprehensive_zkvm_benchmarks.rs"
+
+[[bin]]
+name = "zkvm_benchmarks"
+path = "src/bin/zkvm_benchmarks.rs"

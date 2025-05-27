@@ -1,0 +1,43 @@
+[workspace]
+members = [ "core", "helpers", "profiling" ]
+exclude = [ "profiling/sp1/script", "profiling/sp1/program", "profiling/risc0/host", "profiling/risc0/guest" ]
+resolver = "2"
+
+[workspace.dependencies]
+# ZKVM-compatible dependencies only
+alloy-sol-types = "0.8.19"
+base64 = "0.22.1"
+borsh = { version = "1.5.3", features = ["derive"] }
+cfdkim = { git = "https://github.com/risc0-labs/dkim", default-features = false }
+chrono = { version = "0.4", default-features = false, features = ["serde", "clock"] }
+criterion = { version = "0.5", features = ["html_reports"] }
+dhat = "0.3"
+mailparse = "0.14.0"
+regex-automata = "0.4.8"
+rsa = "=0.9.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+slog = "2.7.0"
+
+# ZKVM Framework Dependencies
+risc0-zkvm = { version = "1.0", features = ["prove", "std"] }
+sp1-sdk = { version = "2.0" }
+
+# Workspace path dependencies
+zkemail-core = { path = "core" }
+zkemail-helpers = { path = "helpers" }
+
+[workspace.metadata.docs.rs]
+features = ["risc0", "sp1"]
+
+[profile.dev]
+opt-level = 3
+
+# ZKVM-optimized release profile
+[profile.release]
+opt-level = 3       # Maximum optimizations for ZKVM
+debug = true        # Include debug symbols for profiling
+lto = true          # Link Time Optimization
+codegen-units = 1   # Single codegen unit for better optimization
+panic = "abort"     # Remove panic unwind code (ZKVM requirement)

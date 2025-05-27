@@ -1,0 +1,9 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; s=default; t=1640995200; h=from:to:subject:date:message-id; bh=Xy+8z1h2F4j5K6L7M8N9O0P1Q2R3S4T5U6V7W8X9Y0Z=; b=ABC123DEF456GHI789JKL012MNO345PQR678STU901VWX234YZA567BCD890EFG123HIJ456KLM789NOP012QRS345TUV678WXY901ZAB234CDE567FGH890IJK123LMN456OPQ789RST012UVW345XYZ678ABC901DEF234GHI567JKL890MNO123PQR456STU789VWX012YZA345BCD678EFG901HIJ234
+From: sender@example.com
+To: recipient@example.com
+Subject: Test Email for ZKVM Verification
+Date: Fri, 31 Dec 2021 12:00:00 +0000
+Message-ID: <test123@example.com>
+
+This is a test email for ZKVM verification.
+It contains sample content to test the email verification process.

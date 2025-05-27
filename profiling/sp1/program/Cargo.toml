@@ -1,0 +1,15 @@
+[package]
+name = "zkmail-sp1-program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+zkemail-core = { path = "../../../core", features = ["sp1"] }
+
+[[bin]]
+name = "zkmail"
+path = "src/main.rs"
+
+[workspace]

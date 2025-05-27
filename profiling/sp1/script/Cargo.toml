@@ -1,0 +1,20 @@
+[package]
+name = "zkmail-sp1-script"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sp1-sdk = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+zkemail-core = { path = "../../../core" }
+zkemail-profiling = { path = "../.." }
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.0", features = ["derive"] }
+
+[[bin]]
+name = "prove"
+path = "src/main.rs"
+
+[[bin]]
+name = "execute"
+path = "src/execute.rs"
