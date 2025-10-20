@@ -10,7 +10,7 @@ base64 = "0.22.1"
 borsh = { version = "1.5.3", features = ["derive"] }
 cfdkim = { git = "https://github.com/risc0-labs/dkim", default-features = false }
 chrono = { version = "0.4", default-features = false, features = ["serde", "clock"] }
-criterion = { version = "0.5", features = ["html_reports"] }
+criterion = { version = "0.7", features = ["html_reports"] }
 dhat = "0.3"
 mailparse = "0.14.0"
 regex-automata = "0.4.8"
