@@ -21,7 +21,7 @@ sha2 = "0.10"
 slog = "2.7.0"
 
 # ZKVM Framework Dependencies
-risc0-zkvm = { version = "1.0", features = ["prove", "std"] }
+risc0-zkvm = { version = "2.3", features = ["prove", "std"] }
 sp1-sdk = { version = "2.0" }
 
 # Workspace path dependencies
