@@ -5,7 +5,7 @@ resolver = "2"
 
 [workspace.dependencies]
 # ZKVM-compatible dependencies only
-alloy-sol-types = "0.8.19"
+alloy-sol-types = "0.8.26"
 base64 = "0.22.1"
 borsh = { version = "1.5.3", features = ["derive"] }
 cfdkim = { git = "https://github.com/risc0-labs/dkim", default-features = false }
